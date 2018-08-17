@@ -48,11 +48,11 @@ while True:
         crop_img = cv2.resize(crop_img, dim, interpolation = cv2.INTER_AREA)
         image[50:50+crop_img.shape[0], 50:50+crop_img.shape[1]] = crop_img
 
-    """ if len(faces) != 0 and save_im_cooldown == 0:
+    if len(faces) != 0 and save_im_cooldown == 0:
             imname = str(time.time()).replace(".", "") + ".png"
             cv2.imwrite(imname, image)
             os.rename(imname, f"Faces/" + imname)
-            save_im_cooldown = 30"""
+            save_im_cooldown = 30
     if timeout > 0:
         timeout -= 1
     if save_im_cooldown > 0:
