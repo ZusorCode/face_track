@@ -24,7 +24,7 @@ def display_rgb(dev, data, timestamp):
     global keep_running, tilt, faceFound, timeout
     image = cv2.cvtColor(data, cv2.COLOR_RGB2BGR)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    faces = face_cascade.detectMultiScale(gray, 1.3, 4)
     
     if len(faces) != 0:
         faceFound = True
