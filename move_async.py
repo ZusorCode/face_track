@@ -14,7 +14,7 @@ last_x = 0
 last_y = 0
 last_w = 0
 last_h = 0
-tilt = 15
+tilt = 0
 timeout = 0
 
 def display_depth(dev, data, timestamp):
@@ -43,7 +43,7 @@ def display_rgb(dev, data, timestamp):
         faceFound = False
         if timeout > 14:
             timeout -= 1
-            tilt = 15
+            tilt = 0
         if timeout >= 15:
             cv2.rectangle(image,(last_x,last_y),(last_x+last_w,last_y+last_h),(255,0,0),2)
             image_height = image.shape[1::-1][1]
